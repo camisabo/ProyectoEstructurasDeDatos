@@ -1,11 +1,11 @@
 package com.company;
 
-public class nodocola {
+public class nodoCola {
     int dato;
-    nodocola siguientedato;
-    public nodocola (int número){
-        dato=número;
-        siguientedato=null;
+    nodoCola siguienteDato;
+    public nodoCola (int num){
+        dato=num;
+        siguienteDato=null;
     }
 
 }
