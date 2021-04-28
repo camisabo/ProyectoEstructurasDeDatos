@@ -1,7 +1,7 @@
-public class listasdobles {
-    private nododoble iniciador, fin;
+public class listasDobles {
+    private nodoDoble iniciador, fin;
 
-    public listasdobles() {
+    public listasDobles() {
         iniciador = fin = null;
     }
 
@@ -9,30 +9,30 @@ public class listasdobles {
         return iniciador == null;  //saber si está vacía
     }
 
-    public void agregar_final(int element) {
+    public void agregarFinal(int element) {
         if (!vacio()) {
-            fin = new nododoble(element, null, fin);
+            fin = new nodoDoble(element, null, fin);
             fin.anterior.siguiente = fin;
 
         } else {
-            iniciador = fin = new nododoble(element);
+            iniciador = fin = new nodoDoble(element);
         }
     }
 
-    public void agregar_inicio(int element) {
+    public void agregarInicio(int element) {
         if (!vacio()) {
-            iniciador = new nododoble(element, iniciador, null);
+            iniciador = new nodoDoble(element, iniciador, null);
             iniciador.siguiente.anterior = iniciador;
 
         } else {
-            iniciador = fin = new nododoble(element);
+            iniciador = fin = new nodoDoble(element);
         }
     }
 
-    public void mostrar_lista_inicioxfin() {
+    public void mostrarListaIniFin() {
         if (!vacio()) {
             String datos="<=>";
-            nododoble auxiliar = iniciador;
+            nodoDoble auxiliar = iniciador;
             while (auxiliar != null) {
                 datos=datos+"{"+auxiliar.datico+"}";
                 auxiliar=auxiliar.siguiente;
@@ -40,10 +40,10 @@ public class listasdobles {
             System.out.println(datos+"mostrando lista");
         }
     }
-    public void mostrar_lista_finxinicio() {
+    public void mostrarListaFinIni() {
         if (!vacio()) {
             String datos="<=>";
-            nododoble auxiliar = fin;
+            nodoDoble auxiliar = fin;
             while (auxiliar != null) {
                 datos=datos+"{"+auxiliar.datico+"}";
                 auxiliar=auxiliar.anterior;
@@ -51,8 +51,8 @@ public class listasdobles {
             System.out.println(datos+"mostrando lista");
         }
     }
-    public int eliminar_inicio(){
-        int elementico=iniciador.datico;
+    public int eliminarInicio(){
+        int elemento = iniciador.datico;
         if(iniciador==fin){
             iniciador=fin=null;
         }else{
@@ -60,17 +60,17 @@ public class listasdobles {
             iniciador.anterior=null;
 
         }
-        return elementico;
+    return elemento;
     }
-    public int eliminar_final(){
-        int elementico=fin.datico;
+    public int eliminarFinal(){
+        int elemento=fin.datico;
         if(iniciador==fin){
             iniciador=fin=null;
         }else{
             fin=fin.anterior;
             fin.siguiente=null;
         }
-        return elementico;
+     return elemento;
     }
     }
 
